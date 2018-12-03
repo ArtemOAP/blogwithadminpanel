@@ -1,0 +1,769 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__logo">
+          <div class="header__logo-text">
+            <a href="#about" data-target="anchor"><span>Авторский блог</span> Ильи Габаирова</a></div>
+        </div>
+
+        <div class="header__nav">
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item dropdown" onclick="return true"><a class="menu__link current">Главная</a>
+                <ul class="dropdown__list">
+                  <li class="dropdown__item"><a href="#spinner" class="dropdown__link" data-target="anchor">О компании</a></li>
+                  <li class="dropdown__item"><a href="#calc" class="dropdown__link" data-target="anchor">Суть
+                      бизнеса</a></li>
+                  <li class="dropdown__item"><a href="#reward" class="dropdown__link" data-target="anchor">Вознаграждение</a></li>
+                  <li class="dropdown__item"><a href="#bonus" class="dropdown__link" data-target="anchor">Автобонус</a></li>
+                  <li class="dropdown__item"><a href="#products" class="dropdown__link" data-target="anchor">Продукция</a></li>
+                </ul>
+              </li>
+              <li class="nav__item teaching"><a class="go-to-webinar">Обучение</a></li>
+            </ul>
+          </nav>
+        </div>
+        <a class="blog-btn go-to-webinar"></a>
+        <ul class="my-link">
+          <li class="my-link__item"><a href="https://www.facebook.com/profile.php?id=100021009543437&ref=bookmarks"
+              target="_blank" class="fb">&nbsp;</a></li>
+          <li class="my-link__item"><a href="https://www.instagram.com/gabairov/" target="_blank" class="ig">&nbsp;</a></li>
+        </ul>
+        <button class="menu-togle" type="button"><span class="menu-togle__inner"></span></button>
+      </div>
+    </header>
+    <section class="hero" style="background-image:url(img/bg/up-pattern.png), url(img/bg/hero.jpg);">
+      <div class="container">
+        <div class="hero__wrapper corners">
+          <div class="hero__block">
+            <h1 class="hero__title">Твои возможности</h1>
+            <h2 class="hero__subtitle">безграничны</h2>
+            <p class="hero__text">Я научу тебя строить бизнес, приносящий не только большие деньги, но и моральное
+              удовлетворение</p>
+            <a href="#contacts" data-target="anchor" class="btn btn--hero">Присоединиться</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="about" style="background-image:url(img/bg/down-pattern.png), url(img/bg/down-pattern2.png);">
+      <div class="container">
+        <h2 class="section-title">Давайте знакомиться,</h2>
+        <h2 class="section-subtitle">меня зовут Илья</h2>
+        <div class="about__row">
+          <div class="about__col">
+            <div class="about__pic corners" style="background-image:url(img/about-pic.jpg);"></div>
+          </div>
+          <div class="about__col text">
+
+            <p>Здравствуйте! Меня зовут <a href="https://www.instagram.com/gabairov/" target="_blank">Илья Габаиров</a>.
+              <span>Я являюсь менеджером компании NL
+                international.</span>
+              Я
+              помогу Вам
+              разобраться в
+              бизнесе и начать зарабатывать, вы поймете, <span>
+                что сетевой маркетинг — такой же бизнес как и любой
+                другой, но с одним
+                большим преимуществом: предела в зарабатывании денег – не существует.
+              </span></p>
+            <p>Вы сами для себя определяете когда и сколько работать в день, сколько зарабатывать в месяц и когда
+              устраивать свой
+              отпуск.</p>
+            <p><span>Хочу представиться, что бы вы понимали, кто я.</span> Окончил НГТУ на самом престижном
+              факультете
+              (Бизнес
+              Факультет) г.
+              Новосибирск, по специальности менеджмент. Проработал в разных коммерческих компаниях от менеджера до
+              заместителя
+              генерального директора крупной компании, а сейчас я - сетевик.  Почему? Потому что сетевой маркетинг
+              – это лучший
+              бизнес и для большинства — это единственная возможность зарабатывать большие деньги. <span>
+                Правильный выбор
+                сетевой компании,
+                залог успеха и развития тебя, как сетевика.
+              </span> Поэтому я сделал выбор в пользу NL international. Но
+              прежде чем начать
+              зарабатывать тут хорошие деньги, надо все таки пройти <span>обучение</span>, которое поможет
+              закрывать
+              возражения
+              и делать грамотное
+              предложение своим людям.</p>
+
+          </div>
+        </div>
+
+        <p>Как и у всех людей у меня были стереотипы о сетевом маркетинге, до тех самых пор, пока мне мой друг,
+          <a href="https://www.instagram.com/a_morozof/" target="_blank">Морозов Александр</a>
+          (ТОП-4 компании NL international) не <span> рассказал как устроен этот бизнес изнутри, откуда берутся
+            деньги и как правильно действовать </span> чтобы через несколько лет иметь внушающий доход, сопоставимый с
+          доходом собственника <span> среднего или крупного бизнеса. </span>
+        </p>
+        <p class="about__title">Партнерство с NL international дает своим менеджерам максимум инструментов, для роста
+          собственной структуры:</p>
+        <div class="about__list">
+          <div class="about__item">
+            <div class="about__item-pic"><img src="img/icons/a1.png" alt=""></div>
+            <div class="about__item-text">
+              <p><span>Бесплатный офис</span> – зарегистрировавшись в системе, ты можешь приходить в офис, проводить
+                встречи. Для
+                тебя это бесплатно,
+                тебе не нужно нести никаких издержек по его аренде, хранению и транспортировки продукции, ежемесячной
+                отчетности и т.п.</p>
+            </div>
+          </div>
+          <div class="about__item">
+            <div class="about__item-pic"><img src="img/icons/a2.png" alt=""></div>
+            <div class="about__item-text">
+              <p><span>Удобный интернет-магазин</span> – с регистрацией контракта ты получаешь доступ к личному
+                кабинету на сайте и
+                интернет —
+                магазину с реферальными ссылками для твоих будущих клиентов и менеджеров. Всё это появляется
+                автоматичеески и опять же
+                – абсолютно бесплатно, не нужно нанимать человека или обращаться в компанию для создания интернет —
+                магазина, его
+                наполнению, продвижению. Не нужно настраивать систему оплаты, доставки. Ежегодно платить за домен и
+                хостинг.</p>
+            </div>
+          </div>
+          <div class="about__item">
+            <div class="about__item-pic"><img src="img/icons/a3.png" alt=""></div>
+            <div class="about__item-text">
+              <p><span>Бесплатное обучение</span> сетевому бизнесу с пошаговым прохождением курса.</p>
+            </div>
+          </div>
+        </div>
+        <p class="about__title center">Почему выгодно партнерство со мной:</p>
+        <p><span>Я научу тебя строить бизнес</span>, приносящий не только большие деньги, более 50 000 руб в месяц, но
+          и моральное
+          удовлетворение. Зарегистрировавшись подо мной, нужно понимать, в какую структуру ты попадаешь  —  самая
+          мощная. </p>
+        <p>Мои наставники – Александр и Татьяна Морозовы, которые раскачали таких ребят как Олег и Анна Черняховские до
+          максимальной квалификации. <span>Выше них – только космос.</span></p>
+        <p>Поэтому у тебя будет самая актtуальная информация, <span>самые крутые</span> материалы для построения
+          бизнеса, которые ты
+          будешь получать от меня поэтапно после регистрации. Зарегистрировавшись подо мной, <span>
+            ты не останешься в
+            свободном плавании
+          </span> с кучей вопросов в голове. По этой причине был создан данный сайт, чтобы разложить по
+          полочкам всю продукцию компании, ее конкурентные преимущества, рассказать подробно о бизнесе и смысле
+          сотрудничества с NL.</p>
+      </div>
+    </section>
+    <div class="business__statistic spinner" id="spinner" style="background-image: url(img/bg/pattern.jpg)">
+      <div class="spinner__list">
+        <div class="spinner__item">
+          <div class="spinner__digit">18</div>
+          <div class="spinner__text">лет на рынке</div>
+        </div>
+        <div class="spinner__item">
+          <span class="spinner__simbol">> </span>
+          <span class="spinner__digit">250</span>
+          <div class="spinner__text">офисов <br> и&nbsp;магазинов</div>
+        </div>
+        <div class="spinner__item">
+          <span class="spinner__simbol">> </span>
+          <span class="spinner__digit">300</span>
+          <div class="spinner__text">наименований <br> продукции</div>
+        </div>
+        <div class="spinner__item">
+          <span class="spinner__simbol">NL STORE</span>
+          <div class="spinner__text">+ кэшбек <br> от >250 компаний</div>
+        </div>
+      </div>
+    </div>
+    <section class="business" id="business" style="background-image: url(img/bg/business-l.png), url(img/bg/business-r.png);">
+
+      <!-- <h2 class="section-title">Подробнее</h2>
+      <h2 class="section-subtitle">про бизнес</h2> -->
+      <div class="business__descr">
+        <div class="container-wide">
+          <div class="business__row">
+            <div class="business__col pic">
+              <img src="img/bg/nl.png" alt="">
+            </div>
+            <div class="business__col center">
+              <h2 class="section-title"><span class=" spinner__simbol">Что за компания</span></h2>
+              <div class="video corners">
+                <div class="video-wrapper">
+                  <img class="video-cover" src="img/bg/bisness-v.jpg" alt="">
+                  <video preload="none" controls="controls" class="video-inner" src="img/video/1.mp4"></video>
+                  <!-- <iframe src="https://www.youtube.com/embed/tLDdMFjP_NE" frameborder="0" allow="accelerometer; autoplay; picture-in-picture"
+                    allowfullscreen></iframe> -->
+                  <!--  -->
+                </div>
+              </div>
+              <a href="#contacts" class="btn btn--red" data-target="anchor">Присоединиться</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator" style="background-image: url(img/bg/calc-bg.jpg);" id="calc">
+      <!-- <img class="gradient" src="img/gradient.png" alt=""> -->
+      <div class="container">
+        <h2 class="section-title"><span class=" spinner__simbol">Откуда беруться деньги</span></h2>
+        <div class="video corners">
+          <div class="video-wrapper">
+            <img class="video-cover" src="img/bg/calc-v.jpg" alt="">
+            <video preload="none" controls="controls" class="video-inner" src="img/video/2.mp4"></video>
+            <!-- <iframe class="video-inner" src="https://www.youtube.com/embed/tLDdMFjP_NE" frameborder="0" allow="accelerometer; autoplay;"
+              allowfullscreen></iframe> -->
+          </div>
+        </div>
+      </div>
+      <div class="container-wide">
+        <h2 class="section-title"><span class="spinner__simbol">Калькулятор твоих доходов</span></h2>
+        <p class="uppercase center">Рассчитай свой будущий доход</p>
+        <div class="calculator__wrapper">
+          <!-- ЛИЧНЫЙ ОБЪЁМ -->
+          <div class="calculator__inner calculator__inner_lo">
+            <div class="calculator__container">
+              <div class="calculator__item calculator__item_heading">
+                <h2 class="calculator__item-header">Личный объем / <span class="accent">ЛО</span>
+                  <span class="uhint" onclick="return true"><span class="uhint__icon"></span> <span class="uhint__text">Личный
+                      объем – то,
+                      что приобретаешь ты лично и твои клиенты.</span></span></h2>
+              </div>
+              <div class="calculator__item">
+                <h3 class="calculator__item-title">Сумма твоих личных покупок</h3>
+                <div class="calculator__range">
+                  <div class="calculator__range-inner calculator__range-inner_slider">
+                    <div id="personalRub" class="calculator__range-slider"></div> <!-- слайдер -->
+                  </div>
+                  <div class="calculator__range-inner calculator__range-inner_quantity">
+                    <div class="calculator__range-money">
+                      <span id="personalRubVal" class="calculator__range-value"></span> <b class="b-rub">&#8381;</b>
+                      <!-- значение -->
+                    </div>
+                    <div class="calculator__range-pv">
+                      <span id="personalPv"></span> PV
+                      <!-- значение -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="calculator__item">
+                <h3 class="calculator__item-title" style="margin-bottom: 10px;">Количество твоих клиентов</h3>
+                <div class="calculator__range">
+                  <div class="calculator__range-inner calculator__range-inner_slider">
+                    <div id="numberOfClients" class="calculator__range-slider"></div> <!-- слайдер -->
+                  </div>
+                  <div class="calculator__range-inner calculator__range-inner_quantity">
+                    <div class="calculator__range-money">
+                      <span id="numberOfClientsVal" class="calculator__range-value"></span> <!-- значение -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="calculator__item">
+                <h3 class="calculator__item-title">Сумма покупок одного клиента</h3>
+                <div class="calculator__range">
+                  <div class="calculator__range-inner calculator__range-inner_slider">
+                    <div id="clientRub" class="calculator__range-slider"></div> <!-- слайдер -->
+                  </div>
+                  <div class="calculator__range-inner calculator__range-inner_quantity">
+                    <div class="calculator__range-money">
+                      <span id="clientRubVal" class="calculator__range-value"></span> <b class="b-rub">&#8381;</b>
+                      <!-- значение -->
+                    </div>
+                    <div class="calculator__range-pv">
+                      <span id="clientPv"></span> PV
+                      <!-- значение -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="calculator__item calculator__item_total">
+                <h3 class="calculator__item-title">Твой Личный объем в месяц <span class="calculator__highlight-text"><span
+                      id="totalPv"></span>
+                    PV <span class="uhint" onclick="return true">
+                      <span class="uhint__icon"></span>
+                      <span class="uhint__text">PV (пиви́ – personal volume) - Баллы, которые начисляются за каждый
+                        приобретенный продукт. Из суммы PV складывается Личный и Групповой объемы.</span>
+                    </span>
+                  </span>
+                </h3>
+              </div>
+            </div>
+            <a href="#contacts" class="btn btn--green uppercase" data-target="anchor">Стать менеджером</a>
+          </div>
+          <!-- ГРУППОВОЙ ОБЪЁМ -->
+          <div class="calculator__inner">
+            <div class="calculator__container calculator__inner_go">
+              <div class="calculator__item calculator__item_heading">
+                <h2 class="calculator__item-header">Групповой объем / <span class="accent">ГО</span>
+                  <span class="uhint" onclick="return true">
+                    <span class="uhint__icon"></span>
+                    <span class="uhint__text">Групповой объем – сумма твоего личного объема (ЛО) и объемов всех
+                      менеджеров
+                      твоей структуры. Структура – люди, которых ты пригласил в бизнес и подписал под свой контракт.</span>
+                  </span>
+                </h2>
+              </div>
+              <div class="calculator__item">
+                <h3 class="calculator__item-title">Количество партнеров (менеджеров), которых ты привлечешь в бизнес</h3>
+                <div class="calculator__range">
+                  <div class="calculator__range-inner calculator__range-inner_slider">
+                    <div id="numberOfManagers" class="calculator__range-slider"></div> <!-- слайдер -->
+                  </div>
+                  <div class="calculator__range-inner calculator__range-inner_quantity">
+                    <div class="calculator__range-money">
+                      <span id="numberOfManagersVal" class="calculator__range-value"></span> <!-- значение -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="calculator__item">
+                <h3 class="calculator__item-title">Сумма покупок одного партнера (менеджера) в месяц</h3>
+                <div class="calculator__range">
+                  <div class="calculator__range-inner calculator__range-inner_slider">
+                    <div id="managerRub" class="calculator__range-slider"></div> <!-- слайдер -->
+                  </div>
+                  <div class="calculator__range-inner calculator__range-inner_quantity">
+                    <div class="calculator__range-money">
+                      <span id="managerRubVal" class="calculator__range-value"></span> <b class="b-rub">&#8381;</b>
+                      <!-- значение -->
+                    </div>
+                    <div class="calculator__range-pv">
+                      <span id="managerPv"></span> PV
+                      <!-- значение -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="calculator__item calculator__item_total">
+                <h3 class="calculator__item-title">Твой Групповой объем в месяц <span class="calculator__highlight-text">
+                    <span id="totalGv"></span> PV <span class="uhint" onclick="return true">
+                      <span class="uhint__icon"></span>
+                      <span class="uhint__text">PV (пиви́ – personal volume) - Баллы, которые
+                        начисляются за каждый приобретенный продукт. Из суммы PV складывается Личный и Групповой
+                        объемы.
+                      </span>
+                    </span>
+                  </span>
+                </h3>
+              </div>
+              <div class="calculator__item calculator__item_income">
+                <div class="calculator__item-inner calculator__item-inner_income">
+                  <h3 class="calculator__item-title uppercase">Ежемесячный доход</h3>
+                  <span class="calculator__income calculator__highlight-text"><span id="totalRub"></span><span class="b-rub">&#8381;</span></span>
+                </div>
+                <div class="calculator__item-inner calculator__item-inner_qualifi">
+                  <h3 class="calculator__item-title">Твоя квалификация <span class="uhint" onclick="return true">
+                      <span class="uhint__icon"></span>
+                      <span class="uhint__text">Квалификация – это статус,
+                        который присваивается тебе по итогу месяца при выполнении определенных условий.</span>
+                    </span></h3>
+                  <span class="calculator__qualification calculator__highlight-text">Master</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator__item calculator__item_attention">
+              <p><b>Важно!</b> Полученная сумма вознаграждения является ориентировочной.</p>
+              <p>Начисление вознаграждения каждому менеджеру индивидуально, поскольку при расчете важно по каким
+                странам
+                проходит его Личный и Групповой объемы, квалификации
+            </div>
+            <a href="#contacts" class="btn btn--green uppercase mobile" data-target="anchor">Стать менеджером</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="reward" id="reward" style="background-image:url(img/bg/down-pattern.png), url(img/bg/idc.jpg);">
+      <div class="container">
+        <h2 class="section-title">IDC</h2>
+        <h2 class="section-subtitle">система вознаграждения</h2>
+
+        <div class="video corners-darc">
+          <div class="video-wrapper">
+            <img class="video-cover" src="img/bg/revard-v.jpg" alt="">
+            <iframe class="video-inner" src="https://www.youtube.com/embed/tLDdMFjP_NE" frameborder="0" allow="accelerometer; autoplay; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <p>Вся продукция NL продается по ценам единого прайса.</p>
+        <p>Менеджер получает <span class="accent">дельта-прибыль</span> за выполнение Личных оборотов и продвижение
+          продукции на рынок.</p>
+
+        <div class="reward__steps">
+          <h3 class="reward__title"><span class="reward__title-digit">5</span> шагов дельта оборота</h3>
+          <div class="reward__list">
+
+            <div class="reward__item">
+              <h4 class="reward__item-title"><span>1</span> шаг</h4>
+              <h5>Вход в систему</h5>
+              <p>35 PV х 0,4 коэффициент вознаграждения = 14 Ye x 35 = 500руб.</p>
+            </div>
+
+            <div class="reward__item">
+              <h4 class="reward__item-title"><span>2</span> шаг</h4>
+              <h5>Активность</h5>
+              <p>70 PV х 0,4 = 1000 руб.</p>
+            </div>
+
+            <div class="reward__item">
+              <h4 class="reward__item-title"><span>3</span> шаг</h4>
+              <h5>Активность плюс</h5>
+              <p>Свыше 70 PV коэффициент в 2 раза выше 0,8!</p>
+            </div>
+
+            <div class="reward__item">
+              <h4 class="reward__item-title"><span>4</span> шаг</h4>
+              <h5>Бонус 200</h5>
+              <p>Подарок от компании 87 YE = 3500 руб.</p>
+            </div>
+
+            <div class="reward__item">
+              <h4 class="reward__item-title"><span>5</span> шаг</h4>
+              <h5>Бонус наставника</h5>
+              <p>Бонус со всей твоей комманды</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bonus" id="bonus" style="background-image: url(img/bg/auto.jpg);">
+      <div class="fullscreen-video-wrap">
+      </div>
+      <div class="container">
+        <h2 class="section-title">Автобонус</h2>
+        <h2 class="section-subtitle">Mercedes от компании NL</h2>
+        <p>Как получить мерседес</p>
+        <button class="bonus__video js-modal-btn" data-video-id="DKj3bKDbHfg"></button>
+        <div class="bonus__steps">
+          <div class="bonus__steps-list">
+            <div class="bonus__steps-item">
+              <div class="bonus__steps-title"><span>1</span> шаг</div>
+              <p>Квалификация от&nbsp;DS&nbsp;и&nbsp;выше</p>
+            </div>
+
+            <div class="bonus__steps-item">
+              <div class="bonus__steps-title"><span>2</span> шаг</div>
+              <p>Держи ее 3 месяца подряд</p>
+            </div>
+
+            <div class="bonus__steps-item">
+              <div class="bonus__steps-title"><span>3</span> шаг</div>
+              <p>заполни заявку в&nbsp;личном офисе</p>
+            </div>
+
+            <div class="bonus__steps-item">
+              <div class="bonus__steps-title"><span>4</span> шаг</div>
+              <p>Забери свой автомобиль</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="essence-join" style="background-image: url(img/bg/essence-join.jpg)">
+      <div class="container">
+        <h2 class="section-title">Хочешь</h2>
+        <h2 class="section-subtitle">вникнуть и разобраться?</h2>
+        <p class="uppercase">Регистрируй контракт, это бесплатно. И вэлком в NBS!</p>
+
+        <div class="essence-join__row">
+          <div class="essence-join__pic"><img src="img/nbs-logo.png" alt="NL logo"></div>
+          <div class="essence-join__text">
+            <h4 class="accent uppercase">NBS Lift</h4>
+            <p>Онлайн-школа сетевого предпринимателя для менеджеров NL, где <span class="accent">доступно</span> и
+              <span class="accent">«без воды»</span> объясняем суть нашего дела.</p>
+          </div>
+        </div>
+        <p class="uppercase">Оставь свои контакты и вступай уже сегодня!</p>
+        <a href="#contacts" class="btn btn--red" data-target="anchor">Присоединиться</a>
+      </div>
+    </section>
+    <section class="products" id="products">
+      <h2 class="section-subtitle">Продукция</h2>
+      <div class="swiper-container slider">
+        <div class="swiper-wrapper slider__list">
+          <div class="swiper-slide slider__item" style="background-image: url(img/bg/slider-1.jpg)"
+            data-swiper-parallax="-500">
+            <div class="slider__container">
+              <div class="slider__text" data-swiper-parallax="-300">
+                <h3 class="slider__title yellow">Energy diet smart</h3>
+                <p>Сбалансированное питание</p>
+
+              </div>
+              <div class="slider__pic" data-swiper-parallax="-100">
+                <img src="img/content/prod1.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slider__item" style="background-image: url(img/bg/slider-2.jpg)"
+            data-swiper-parallax="-500">
+            <div class="slider__container">
+              <div class="slider__text" data-swiper-parallax="-300">
+                <h3 class="slider__title accent">Energy diet HD</h3>
+                <p>Сбалансированное питание</p>
+
+              </div>
+              <div class="slider__pic" data-swiper-parallax="-100">
+                <img src="img/content/prod2.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slider__item" style="background-image: url(img/bg/slider-3.jpg)"
+            data-swiper-parallax="-500">
+            <div class="slider__container">
+              <div class="slider__text" data-swiper-parallax="-300">
+                <h3 class="slider__title pink">Energy slim</h3>
+                <p>Продукты для похудения</p>
+
+              </div>
+              <div class="slider__pic" data-swiper-parallax="-100">
+                <img src="img/content/prod3.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slider__item" style="background-image: url(img/bg/slider-4.jpg)"
+            data-swiper-parallax="-500">
+            <div class="slider__container">
+              <div class="slider__text" data-swiper-parallax="-300">
+                <h3 class="slider__title yellow">Energy pro</h3>
+                <p>Спортивное питание</p>
+              </div>
+              <div class="slider__pic" data-swiper-parallax="-100">
+                <img src="img/content/prod4.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slider__item" style="background-image: url(img/bg/slider-5.jpg)"
+            data-swiper-parallax="-500">
+            <div class="slider__container">
+              <div class="slider__text" data-swiper-parallax="-300">
+                <h3 class="slider__title corall">YO Coffee и Enerwood</h3>
+                <p>Кофе и чай</p>
+              </div>
+              <div class="slider__pic" data-swiper-parallax="-100">
+                <img src="img/content/prod5.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slider__item" style="background-image: url(img/bg/slider-6.jpg)"
+            data-swiper-parallax="-500">
+            <div class="slider__container">
+              <div class="slider__text" data-swiper-parallax="-300">
+                <h3 class="slider__title red">Sklaer</h3>
+                <p>Зубные пасты</p>
+              </div>
+              <div class="slider__pic" data-swiper-parallax="-100">
+                <img src="img/content/prod6.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slider__item" style="background-image: url(img/bg/slider-7.jpg)"
+            data-swiper-parallax="-500">
+            <div class="slider__container">
+              <div class="slider__text" data-swiper-parallax="-300">
+                <h3 class="slider__title beige">Косметика и уход за кожей </h3>
+                <p>Для женщин и мужчин</p>
+              </div>
+              <div class="slider__pic" data-swiper-parallax="-100">
+                <img src="img/content/prod7.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slider__item" style="background-image: url(img/bg/slider-8.jpg)"
+            data-swiper-parallax="-500">
+            <div class="slider__container">
+              <div class="slider__text" data-swiper-parallax="-300">
+                <h3 class="slider__title blue">Уходовые средства<br> для волос</h3>
+                <p></p>
+              </div>
+              <div class="slider__pic" data-swiper-parallax="-100">
+                <img src="img/content/prod8.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slider__item" style="background-image: url(img/bg/slider-9.jpg)"
+            data-swiper-parallax="-500">
+            <div class="slider__container">
+              <div class="slider__text" data-swiper-parallax="-300">
+                <h3 class="slider__title yellow">Питание для детей</h3>
+                <p>Смарт-коктейли для умного роста</p>
+                <ul class="list">
+                  <li class="item">Пользуйся классными продуктами и забирай кэшбек, например.</li>
+                  <li class="item">Пользуйся классными</li>
+                  <li class="item">Пользуйся классными продуктами и забирай кэшбек, например. Пользуйся
+                    классными продуктами и забирай кэшбек, например.</li>
+                </ul>
+              </div>
+              <div class="slider__pic" data-swiper-parallax="-100">
+                <img src="img/content/prod9.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slider__item" style="background-image: url(img/bg/slider-10.jpg)"
+            data-swiper-parallax="-500">
+            <div class="slider__container">
+              <div class="slider__text" data-swiper-parallax="-300">
+                <h3 class="slider__title accent">Fineffect</h3>
+                <p>Средства для дома</p>
+              </div>
+              <div class="slider__pic" data-swiper-parallax="-100">
+                <img src="img/content/prod10.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-button-prev swiper-button-green"></div>
+        <div class="swiper-button-next swiper-button-green"></div>
+      </div>
+    </section>
+    <section class="contacts" id="contacts" style="background-image:url(img/bg/pattern-min.png), url(img/bg/hero.jpg);">
+      <div class="
+      container">
+        <div class="contacts__wrapper corners">
+          <div class="contacts__block">
+            <p class="uppercase">Оставь свои контакты<br>
+              <span class="accent">и вступай уже сегодня</span></p>
+            <form action="" method="POST" class="contacts__form" id="contacts__form">
+
+              <fieldset class="contacts__form-row">
+                <label for="name" class="contacts__form-label">Имя *</label>
+                <input id="name" required name="name" type="text" class="contacts__form-input">
+              </fieldset>
+
+
+              <fieldset class="contacts__form-row">
+                <label for="phone" class="contacts__form-label">Телефон *</label>
+                <input id="phone" name="phone" required type="tel" class="contacts__form-input">
+              </fieldset>
+
+              <fieldset class="contacts__form-row">
+                <label for="age" class="contacts__form-label">Возраст *</label>
+                <input id="age" name="age" required type="number" class="contacts__form-input age">
+              </fieldset>
+
+              <fieldset class="contacts__form-row">
+                <label for="city" class="contacts__form-label">Город *</label>
+                <div class="contacts__form-selectwrap">
+                  <select name="city" required class="contacts__form-select" id="city">
+                    <option value="Москва">Москва</option>
+                    <option value="Новосибирск">Новосибирск</option>
+                    <option value="Санкт-Петербург">Санкт-Петербург</option>
+                    <option value="other">Другой город</option>
+                  </select>
+                </div>
+              </fieldset>
+              <fieldset class="contacts__form-row" id="other-city" style="display: none;">
+                <label for="city-input" class="contacts__form-label">Ваш город *</label>
+                <input class="contacts__form-input" id="city-input" name="otherCity" type="text">
+              </fieldset>
+
+
+              <button class="btn btn--red" type="submit">Присоединиться</button>
+              <p>* Поля, обязательные для заполнения </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div> <!-- /wrapper -->
+
+
+  <footer class="footer">
+    <div class="container"></div>
+  </footer>
+  <a href="#top" class="to-top" data-target="anchor"></a>
+
+
+  <div class="overlay overlay-contacts">
+    <div class="popup">
+      <button class="close closed">×</button>
+      <div class="popup__body">
+        <p>Оставьте свои контактные данные и получите доступ к системе обучения!</p>
+        <a class="btn btn--green closed" href="#contacts" data-target="anchor">Получить доступ</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="overlay overlay-thanks">
+    <div class="popup">
+      <button class="close closed">×</button>
+      <div class="popup__body">
+        <p>Спасибо за ваш ответ. <br /> Я свяжусь с вами в ближайшее время.</p>
+        <button class="btn btn--green closed" type="button">Закрыть</button>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block javascripts %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="js/jquery-modal-video.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/nouislider.min.js"></script>
+  <script src="js/system-nl.js"></script>
+  <script src="js/scripts.js"></script>
+  <script>
+      $(".js-modal-btn").modalVideo();
+
+      $(function () {
+          $('form')
+              .append("<input name='email' value='{{ email }}' type='hidden'>")
+              .append("<input name='gender' value='{{ gender }}' type='hidden'>")
+              .append("<input name='full' value='{{ full }}' type='hidden'>")
+              .append("<input name='tmp' value='{{ tmp }}' type='hidden'>");
+
+
+          $('form').on('submit', function(e) {
+              e.preventDefault();
+              var data = $(this).serialize();
+              // if ( localStorage.getItem('first_send') !== '1') {
+              //send
+              $.ajax({
+                  url: '{{ path('user_new') }}',
+                  data: data,
+                  type: 'post',
+                  success: function(data) {
+                      if (!!data && data.status === 200) {
+                          $('.overlay-thanks').addClass('active');
+                      }
+                      if (!!data && data.status === 500) {
+
+                      }
+                  },
+                  error: function(xhr, ajaxOptions, thrownError) {
+                      console.log(xhr.status + ' ' + thrownError);
+                  }
+              });
+
+              localStorage.setItem('first_send', '1');
+              //    } else {
+              $('.overlay-thanks').addClass('active');
+              setTimeout(function () {
+                  $('.overlay-thanks').hide()
+              },4000)
+              //  }
+
+          });
+
+
+
+      })
+  </script>
+
+{% endblock %}

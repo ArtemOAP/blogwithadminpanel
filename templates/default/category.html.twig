@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__logo">
+                    <div class="header__logo-text">
+                        <a href="/" data-target="anchor"><span>Авторский блог</span> Ильи Габаирова</a></div>
+                </div>
+
+                <div class="header__nav">
+                    <nav class="menu">
+                        <ul class="menu__list">
+                            <li class="nav__item grey"><a href="">Обучение</a></li>
+                            {#<li class="menu__item"><a href="/#contacts" class="menu__link">Контакты</a></li>#}
+
+                        </ul>
+                    </nav>
+                </div>
+                <a href="" class="blog-btn grey"></a>
+                <ul class="my-link">
+                    <li class="my-link__item"><a href="https://www.facebook.com/profile.php?id=100021009543437&ref=bookmarks"
+                                                 target="_blank" class="fb">&nbsp;</a></li>
+                    <li class="my-link__item"><a href="https://www.instagram.com/gabairov/" target="_blank" class="ig">&nbsp;</a></li>
+                </ul>
+                <button class="menu-togle" type="button"><span class="menu-togle__inner"></span></button>
+            </div>
+        </header>
+
+        <section class="webinar" id="webinar" style="background-image:url(img/bg/down-pattern.png), url(img/bg/wr.png), url(img/bg/wl.png), url(img/bg/idc.jpg);">
+            <div class="container">
+                <h2 class="section-subtitle">Дорогие друзья!</h2>
+                <div class="webinar__text-block">
+                    <p>Специиально для вас я подобрал видеоматериалы, которые помогут вам лучше понять как
+                        работает бизнес, как заработать деньги, откуда берутся люди в нашем бизнесе, <b class="white">самые лучшие
+                            материалы, которые есть в сети интернет</b>. Информация будет постоянно пополняться новыми интересными
+                        видео.</p>
+                    <p class="subtitle" style="margin-top: 2em;">Научитесь зарабатывать сами, чтобы потом научить зарабатывать
+                        своих
+                        будущих партнеров</p>
+                </div>
+                <div class="webinar__category-list">
+
+
+                     {% for cat in categories  %}
+
+                    <a href="{{ path('video',{'id':cat.id}) }}" class="webinar__category-item">
+                        <div class="webinar__category-pic" style="background-image: url('/uploads/{{ cat.image }}')" ></div>
+                        <div class="webinar__category-title">{{ cat.title }}</div>
+                        <div class="webinar__category-descr">{{ cat.description }}</div>
+
+                    </a>
+
+
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </section>
+    </div> <!-- /wrapper -->
+
+
+    <footer class="footer">
+        <div class="container"></div>
+    </footer>
+    <a href="#top" class="to-top" data-target="anchor"></a>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-modal-video.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/scripts.js"></script>
+{% endblock %}

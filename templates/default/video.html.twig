@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__logo">
+                    <div class="header__logo-text">
+                        <a href="/" data-target="anchor"><span>Авторский блог</span> Ильи Габаирова</a></div>
+                </div>
+
+                <div class="header__nav">
+                    <nav class="menu">
+                        <ul class="menu__list">
+                            <li class="nav__item grey"><a href="">Обучение</a></li>
+                            {#<li class="menu__item"><a href="/#contacts" class="menu__link">Контакты</a></li>#}
+
+                        </ul>
+                    </nav>
+                </div>
+                <a href="" class="blog-btn grey"></a>
+                <ul class="my-link">
+                    <li class="my-link__item"><a href="https://www.facebook.com/profile.php?id=100021009543437&ref=bookmarks"
+                                                 target="_blank" class="fb">&nbsp;</a></li>
+                    <li class="my-link__item"><a href="https://www.instagram.com/gabairov/" target="_blank" class="ig">&nbsp;</a></li>
+                </ul>
+                <button class="menu-togle" type="button"><span class="menu-togle__inner"></span></button>
+            </div>
+        </header>
+        <div class="webinar-banner" style="background-image:url({{ category.imageBanner }});">
+            <div class="container">
+                <h1 class="section-title">{{ category.title }}</h1>
+            </div>
+        </div>
+        <section class="webinar-inner" id="webinar-inner" style="background-image:url(/img/bg/down-pattern.png), url(/img/bg/idc.jpg);">
+            <div class="container">
+                <div class="webinar__text-block">
+                    <p>{{ category.description }}</p>
+                </div>
+                <div class="webinar__video-list">
+
+                    {% for product in products %}
+                    <div class="webinar__video-item">
+                        <div class="webinar__video-pic js-modal-trigger" data-video-id="{{ replace_string(product.url) }}">
+                            <img class="webinar__video-cover" src="{{ product.file }}" alt="">
+                        </div>
+                        <div class="webinar__video-title">{{ product.title }}</div>
+                        <div class="webinar__video-descr">{{ product.description }}</div>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </section>
+    </div> <!-- /wrapper -->
+
+
+    <footer class="footer">
+        <div class="container"></div>
+    </footer>
+    <a href="#top" class="to-top" data-target="anchor"></a>
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="/js/jquery-modal-video.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script>
+        $(".js-modal-trigger").modalVideo();
+    </script>
+{% endblock %}
+
