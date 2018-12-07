@@ -4,13 +4,12 @@
 
 {% block body %}
   <div class="wrapper">
+
+
+
+
     <header class="header">
       <div class="container">
-        <div class="header__logo">
-          <div class="header__logo-text">
-            <a href="#about" data-target="anchor"><span>Авторский блог</span> Ильи Габаирова</a></div>
-        </div>
-
         <div class="header__nav">
           <nav class="menu">
             <ul class="menu__list">
@@ -24,15 +23,26 @@
                   <li class="dropdown__item"><a href="#products" class="dropdown__link" data-target="anchor">Продукция</a></li>
                 </ul>
               </li>
-              <li class="nav__item teaching"><a class="go-to-webinar">Обучение</a></li>
+
+              {% if( is_granted("ROLE_USER"))  %}
+                <li class="menu__item teaching"><a href="{{ path('category') }}">Обучение</a></li>
+               {% else %}
+                 <li class="menu__item teaching"><a class="go-to-webinar">Обучение</a></li>
+              {% endif %}
+
+
             </ul>
           </nav>
         </div>
-        <a class="blog-btn go-to-webinar"></a>
+
+        <div class="header__logo">
+          <div class="header__logo-text">
+            <a href="#about" data-target="anchor"><span>Авторский блог</span> Ильи Габаирова</a></div>
+        </div>
+        <div class="blog-btn go-to-webinar"><a>Обучение</a></div>
         <ul class="my-link">
-          <li class="my-link__item"><a href="https://www.facebook.com/profile.php?id=100021009543437&ref=bookmarks"
-              target="_blank" class="fb">&nbsp;</a></li>
-          <li class="my-link__item"><a href="https://www.instagram.com/gabairov/" target="_blank" class="ig">&nbsp;</a></li>
+          <li class="my-link__item"><a href="https://www.facebook.com/profile.php?id=100021009543437&ref=bookmarks" target="_blank" class="fb">&nbsp;</a></li>
+          <li class="my-link__item"><a href="https://www.instagram.com/i_gabairov/" target="_blank" class="ig">&nbsp;</a></li>
         </ul>
         <button class="menu-togle" type="button"><span class="menu-togle__inner"></span></button>
       </div>
@@ -144,7 +154,7 @@
           мощная. </p>
         <p>Мои наставники – Александр и Татьяна Морозовы, которые раскачали таких ребят как Олег и Анна Черняховские до
           максимальной квалификации. <span>Выше них – только космос.</span></p>
-        <p>Поэтому у тебя будет самая актtуальная информация, <span>самые крутые</span> материалы для построения
+        <p>Поэтому у тебя будет самая актуальная информация, <span>самые крутые</span> материалы для построения
           бизнеса, которые ты
           будешь получать от меня поэтапно после регистрации. Зарегистрировавшись подо мной, <span>
             ты не останешься в
@@ -207,7 +217,7 @@
     <section class="calculator" style="background-image: url(img/bg/calc-bg.jpg);" id="calc">
       <!-- <img class="gradient" src="img/gradient.png" alt=""> -->
       <div class="container">
-        <h2 class="section-title"><span class=" spinner__simbol">Откуда беруться деньги</span></h2>
+        <h2 class="section-title"><span class=" spinner__simbol">Откуда берутся деньги</span></h2>
         <div class="video corners">
           <div class="video-wrapper">
             <img class="video-cover" src="img/bg/calc-v.jpg" alt="">
@@ -384,8 +394,8 @@
         <div class="video corners-darc">
           <div class="video-wrapper">
             <img class="video-cover" src="img/bg/revard-v.jpg" alt="">
-            <iframe class="video-inner" src="https://www.youtube.com/embed/tLDdMFjP_NE" frameborder="0" allow="accelerometer; autoplay; picture-in-picture"
-              allowfullscreen></iframe>
+              <iframe class="video-inner" src="https://www.youtube.com/embed/YgSHUrKC8O8" frameborder="0" allow="accelerometer; autoplay; picture-in-picture"
+                      allowfullscreen></iframe>
           </div>
         </div>
         <p>Вся продукция NL продается по ценам единого прайса.</p>
@@ -640,18 +650,18 @@
 
               <fieldset class="contacts__form-row">
                 <label for="name" class="contacts__form-label">Имя *</label>
-                <input id="name" required name="name" type="text" class="contacts__form-input">
+                <input id="name" required name="name" value="{{ name }}" type="text" class="contacts__form-input">
               </fieldset>
 
 
               <fieldset class="contacts__form-row">
                 <label for="phone" class="contacts__form-label">Телефон *</label>
-                <input id="phone" name="phone" required type="tel" class="contacts__form-input">
+                <input id="phone" name="phone" value="{{ phone }}" required type="tel" class="contacts__form-input">
               </fieldset>
 
               <fieldset class="contacts__form-row">
                 <label for="age" class="contacts__form-label">Возраст *</label>
-                <input id="age" name="age" required type="number" class="contacts__form-input age">
+                <input id="age" name="age" value="{{ age }}" required type="number" class="contacts__form-input age">
               </fieldset>
 
               <fieldset class="contacts__form-row">
@@ -659,7 +669,7 @@
                 <div class="contacts__form-selectwrap">
                   <select name="city" required class="contacts__form-select" id="city">
                     <option value="Москва">Москва</option>
-                    <option value="Новосибирск">Новосибирск</option>
+                    <option selected value="Новосибирск">Новосибирск</option>
                     <option value="Санкт-Петербург">Санкт-Петербург</option>
                     <option value="other">Другой город</option>
                   </select>
@@ -732,7 +742,7 @@
           $('form').on('submit', function(e) {
               e.preventDefault();
               var data = $(this).serialize();
-              // if ( localStorage.getItem('first_send') !== '1') {
+               if ( localStorage.getItem('first_send') !== '1') {
               //send
               $.ajax({
                   url: '{{ path('user_new') }}',
@@ -752,16 +762,17 @@
               });
 
               localStorage.setItem('first_send', '1');
-              //    } else {
+                  } else {
               $('.overlay-thanks').addClass('active');
-              setTimeout(function () {
-                  $('.overlay-thanks').hide()
-              },4000)
-              //  }
+
+                }
 
           });
 
 
+          $('.overlay-thanks .closed').on('click',function () {
+              $('.overlay-thanks').hide();
+          })
 
       })
   </script>

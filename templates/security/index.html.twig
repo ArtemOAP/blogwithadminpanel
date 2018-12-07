@@ -43,4 +43,30 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
 
+    <script type="application/javascript">
+
+        (function () {
+            if (localStorage.hasOwnProperty('data')){
+                var data = JSON.parse(localStorage.getItem('data'));
+                document.querySelector('input[name=_username]').value = data.name;
+                document.querySelector('input[name=_password]').value = data.pass;
+            }
+        })();
+
+        document.querySelector('form').addEventListener("submit",function (e) {
+           var name = document.querySelector('input[name=_username]').value;
+           var pas = document.querySelector('input[name=_password]').value;
+
+           var data =JSON.stringify({
+               'name':name,
+               'pass':pas
+           });
+
+           localStorage.setItem('data',data)
+        })
+
+
+    </script>
+
 {% endblock %}
+

@@ -6,27 +6,20 @@
     <div class="wrapper">
         <header class="header">
             <div class="container">
+                <div class="header__nav-inner">
+                    <ul class="menu__list">
+                        <li class="menu__item home"><a href="{{ path('default') }}" class="menu__link">Главная</a></li>
+                        <li class="menu__item teaching"><a href="javascript:void(0);">Обучение</a></li>
+                    </ul>
+                </div>
                 <div class="header__logo">
                     <div class="header__logo-text">
                         <a href="/" data-target="anchor"><span>Авторский блог</span> Ильи Габаирова</a></div>
                 </div>
-
-                <div class="header__nav">
-                    <nav class="menu">
-                        <ul class="menu__list">
-                            <li class="nav__item grey"><a href="">Обучение</a></li>
-                            {#<li class="menu__item"><a href="/#contacts" class="menu__link">Контакты</a></li>#}
-
-                        </ul>
-                    </nav>
-                </div>
-                <a href="" class="blog-btn grey"></a>
                 <ul class="my-link">
-                    <li class="my-link__item"><a href="https://www.facebook.com/profile.php?id=100021009543437&ref=bookmarks"
-                                                 target="_blank" class="fb">&nbsp;</a></li>
+                    <li class="my-link__item"><a href="https://www.facebook.com/profile.php?id=100021009543437&ref=bookmarks" target="_blank" class="fb">&nbsp;</a></li>
                     <li class="my-link__item"><a href="https://www.instagram.com/gabairov/" target="_blank" class="ig">&nbsp;</a></li>
                 </ul>
-                <button class="menu-togle" type="button"><span class="menu-togle__inner"></span></button>
             </div>
         </header>
 
@@ -46,16 +39,12 @@
 
 
                      {% for cat in categories  %}
-
                     <a href="{{ path('video',{'id':cat.id}) }}" class="webinar__category-item">
                         <div class="webinar__category-pic" style="background-image: url('/uploads/{{ cat.image }}')" ></div>
                         <div class="webinar__category-title">{{ cat.title }}</div>
                         <div class="webinar__category-descr">{{ cat.description }}</div>
 
                     </a>
-
-
-
                     {% endfor %}
 
 

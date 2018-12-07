@@ -4,30 +4,24 @@
     <div class="wrapper">
         <header class="header">
             <div class="container">
+                <div class="header__nav-inner">
+                    <ul class="menu__list">
+                        <li class="menu__item home"><a href="{{ path('default') }}" class="menu__link">Главная</a></li>
+                        <li class="menu__item teaching"><a href="{{ path('category') }}">Обучение</a></li>
+                    </ul>
+                </div>
                 <div class="header__logo">
                     <div class="header__logo-text">
                         <a href="/" data-target="anchor"><span>Авторский блог</span> Ильи Габаирова</a></div>
                 </div>
-
-                <div class="header__nav">
-                    <nav class="menu">
-                        <ul class="menu__list">
-                            <li class="nav__item grey"><a href="">Обучение</a></li>
-                            {#<li class="menu__item"><a href="/#contacts" class="menu__link">Контакты</a></li>#}
-
-                        </ul>
-                    </nav>
-                </div>
-                <a href="" class="blog-btn grey"></a>
                 <ul class="my-link">
-                    <li class="my-link__item"><a href="https://www.facebook.com/profile.php?id=100021009543437&ref=bookmarks"
-                                                 target="_blank" class="fb">&nbsp;</a></li>
+                    <li class="my-link__item"><a href="https://www.facebook.com/profile.php?id=100021009543437&ref=bookmarks" target="_blank" class="fb">&nbsp;</a></li>
                     <li class="my-link__item"><a href="https://www.instagram.com/gabairov/" target="_blank" class="ig">&nbsp;</a></li>
                 </ul>
-                <button class="menu-togle" type="button"><span class="menu-togle__inner"></span></button>
             </div>
         </header>
-        <div class="webinar-banner" style="background-image:url({{ category.imageBanner }});">
+
+        <div class="webinar-banner" style="background-image:url('/uploads/{{ category.imageBanner }}');">
             <div class="container">
                 <h1 class="section-title">{{ category.title }}</h1>
             </div>
@@ -42,7 +36,7 @@
                     {% for product in products %}
                     <div class="webinar__video-item">
                         <div class="webinar__video-pic js-modal-trigger" data-video-id="{{ replace_string(product.url) }}">
-                            <img class="webinar__video-cover" src="{{ product.file }}" alt="">
+                            <img class="webinar__video-cover" src="/uploads/{{ product.file }}" alt="">
                         </div>
                         <div class="webinar__video-title">{{ product.title }}</div>
                         <div class="webinar__video-descr">{{ product.description }}</div>

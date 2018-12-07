@@ -1,10 +1,13 @@
 easy_admin:
     site_name: 'Admin'
+    formats:
+        datetime: 'd/m/Y h:i'
     entities:
        User:
           class: App\Entity\User
           label: 'Подписчики'
           list:
+            actions: ['show']
             title: "Список подписчиков"
             fields:
                   - name
@@ -12,9 +15,10 @@ easy_admin:
                   - { property: 'email', label: 'Contact' }
                   - { property: 'age', label: 'Age' }
                   - { property: 'city', label: 'city' }
-                  - { property: 'city', label: 'city' }
+                  - { property: 'created', label: 'Date' }
                   - { property: 'active', label: 'active' }
                   - { property: 'refToken', label: 'ref link', type: 'url' }
+
        Category:
           class: App\Entity\Category
           label: 'Категории'

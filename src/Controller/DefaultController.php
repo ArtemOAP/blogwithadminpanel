@@ -25,7 +25,7 @@ class DefaultController extends AbstractController
     {
         $params = $request->query->all();
         return $this->render('default/index.html.twig', [
-            'age'=>isset($params['age']) && (int)$params['age'] ?(int)$params['age']:23,
+            'age'=>isset($params['age']) && (int)$params['age'] ?(int)$params['age']:'',
             'email'=>isset($params['email']) && !empty($params['email'])?$params['email']:'',
             'gender'=>isset($params['gender']) && !empty($params['gender'])?$params['gender']:'',
             'name'=>isset($params['name']) && !empty($params['name'])?$params['name']:'',
@@ -54,6 +54,7 @@ class DefaultController extends AbstractController
             );
         }
         $token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
+
 
         $this->get('security.token_storage')->setToken($token);
         $this->get('session')->set('_security_main', serialize($token));

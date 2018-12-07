@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -84,6 +85,63 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $refToken;
+
+
+
+    /**
+     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
+     * @var \DateTime
+     */
+    private $created;
+
+
+    /**
+     * @ORM\Column(type="datetime",options={"default": "CURRENT_TIMESTAMP"})
+     * @var \DateTime
+     */
+    private $visit;
+
+    public function __construct()
+    {
+        $this->created = new \DateTime("now");
+        $this->visit   = new \DateTime("now");
+
+
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreated(): \DateTime
+    {
+        return $this->created;
+    }
+
+    /**
+     * @param \DateTime $created
+     */
+    public function setCreated(\DateTime $created): void
+    {
+        $this->created = $created;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getVisit(): \DateTime
+    {
+        return $this->visit;
+    }
+
+    /**
+     * @param \DateTime $visit
+     */
+    public function setVisit(\DateTime $visit): void
+    {
+        $this->visit = $visit;
+    }
+
+
 
 
     public function getId(): ?int
@@ -196,6 +254,7 @@ class User implements UserInterface
     {
         $this->active = $active;
 
+
         return $this;
     }
 
@@ -224,6 +283,7 @@ class User implements UserInterface
     public function setRole($role = null)
     {
         $this->role = $role;
+        return $this;
     }
 
     public function getRoles()

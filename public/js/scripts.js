@@ -15,11 +15,11 @@ $(document).ready(function () {
 
 
   $('.go-to-webinar').click(function () {
-    $('.overlay').addClass('active');
+    $('.overlay-contacts').addClass('active');
   });
 
   $('.closed').click(function () {
-    $('.overlay').removeClass('active');
+    $('.overlay-contacts').removeClass('active');
   });
 
 
@@ -69,9 +69,9 @@ $(document).ready(function () {
   })
 
   //  spincr
-
+  // resource: https://codepen.io/shivasurya/pen/FatiB
   $(function () {
-    // resource: https://codepen.io/shivasurya/pen/FatiB
+
     function startCount(countEl) {
       if (countEl.length) {
         countEl.each(function () {
@@ -81,8 +81,8 @@ $(document).ready(function () {
               counter: $this.text()
             },
             {
-              duration: 3000,
-              easing: 'swing',
+              duration: 2000,
+              easing: 'linear',
               step: function (el) {
                 $this.text(Math.ceil(el));
               }
@@ -96,27 +96,30 @@ $(document).ready(function () {
     var $window = $(window);
     var windowHeight = $window.height();
 
-    $animationEl.each(function () {
-      var initCount = true;
-      var $element = $(this);
-      var $countEl = $(this).find('.spinner__digit');
 
-      $window.on('scroll resize', function () {
-        var windowTopPosition = $window.scrollTop();
-        var windowBottomPosition = (windowTopPosition + windowHeight);
-        var elementTopPosition = $element.offset().top + windowHeight / 5;
-        //check to see if this current container is within viewport
 
-        if (elementTopPosition <= windowBottomPosition) {
-          if (initCount) {
-            startCount($countEl);
-            initCount = false;
+    if (window.matchMedia("(min-width: 600px)").matches) {
+      $animationEl.each(function () {
+        var initCount = true;
+        var $element = $(this);
+        var $countEl = $(this).find('.spinner__digit');
+
+        $window.on('scroll resize', function () {
+          var windowTopPosition = $window.scrollTop();
+          var windowBottomPosition = (windowTopPosition + windowHeight);
+          var elementTopPosition = $element.offset().top;
+          //check to see if this current container is within viewport
+
+          if (elementTopPosition <= windowBottomPosition) {
+            if (initCount) {
+              startCount($countEl);
+              initCount = false;
+            }
           }
-        }
+        });
       });
-    });
+    }
 
-    $window.trigger('scroll');
   });
 
 

@@ -16,7 +16,6 @@
 html {
   height: 100%; }
 
-
 body {
   position: relative;
   min-height: 100%;
@@ -490,19 +489,21 @@ ul.list {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto; }
+  margin-right: 20px;
+  margin-left: auto;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto; }
+  @media (max-width: 600px) {
+    .header__logo {
+      display: none; } }
 
 .header__logo-text a {
-  text-decoration: none; }
+  text-decoration: none;
+  font-weight: bold; }
 .header__logo-text span {
-  vertical-align: baseline; }
-@media (max-width: 1100px) {
-  .header__logo-text {
-    font-weight: bold; }
-    .header__logo-text span {
-      color: #01bd5e; } }
+  vertical-align: baseline;
+  color: #01bd5e; }
 @media (max-width: 900px) {
   .header__logo-text {
     font-size: 0; }
@@ -537,15 +538,25 @@ ul.list {
     -ms-transform: translateX(0%);
     transform: translateX(0%); }
 
+.header__nav-inner .menu__item {
+  display: inline-block;
+  width: auto; }
+  .header__nav-inner .menu__item.teaching, .header__nav-inner .menu__item.grey, .header__nav-inner .blog-btn {
+    display: inline-block; }
+  @media (max-width: 600px) {
+    .header__nav-inner .menu__item.home {
+      font-size: 0;
+      background: url(../img/icons/home.png) 0 40%/30px 30px no-repeat; } }
+
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
@@ -568,19 +579,7 @@ ul.list {
   justify-content: flex-start;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
-  margin-right: 8%; }
-  @media (max-width: 1100px) {
-    .menu__list {
-      margin-right: 0; } }
-  @media (max-width: 900px) {
-    .menu__list {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      width: 100%;
-      margin-right: 0; } }
+  align-items: center; }
 
 .menu__item {
   position: relative; }
@@ -594,10 +593,50 @@ ul.list {
       width: 100%; }
       .menu__item a {
         text-align: center; } }
+  .menu__item.teaching, .menu__item.grey, .blog-btn {
+    background-color: #bf0000; }
+    .menu__item.teaching:after, .menu__item.grey:after, .blog-btn:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 56px;
+      height: 100%;
+      background-color: #800000;
+      z-index: 0;
+      -webkit-transition: width 0.5s;
+      -o-transition: width 0.5s;
+      transition: width 0.5s; }
+    .menu__item.teaching a, .menu__item.grey a, .blog-btn a {
+      position: relative;
+      padding: 20px 25px 20px 65px;
+      z-index: 1; }
+      .menu__item.teaching a:before, .menu__item.grey a:before, .blog-btn a:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 56px;
+        height: 56px;
+        background: url(../img/icons/book.png) center center/30px 26px no-repeat;
+        z-index: 1; }
+    .menu__item.teaching:hover:after, .menu__item.grey:hover:after, .blog-btn:hover:after {
+      width: 100%; }
+  @media (max-width: 900px) {
+    .menu__item {
+      width: 100%; }
+      .menu__item a {
+        text-align: center; }
+      .menu__item.teaching, .menu__item.grey, .blog-btn {
+        display: none; } }
+  .menu__item.grey {
+    background-color: #14171c; }
+    .menu__item.grey:after {
+      background-color: #101216; }
 
 .dropdown > a {
   position: relative;
-  padding: 20px 75px 20px 25px; }
+  padding: 20px 75px 20px 0px; }
   .dropdown > a:after {
     content: '';
     position: absolute;
@@ -620,7 +659,7 @@ ul.list {
   -ms-transform: translateY(-50%) rotate(-45deg);
   transform: translateY(-50%) rotate(-45deg); }
 .dropdown:hover .dropdown__list {
-  left: 0;
+  left: -10px;
   opacity: 1; }
 @media (max-width: 900px) {
   .dropdown a {
@@ -640,7 +679,7 @@ ul.list {
   @media (max-width: 900px) {
     .dropdown__list {
       position: relative;
-      left: auto;
+      left: 0px !important;
       top: auto;
       opacity: 1;
       background-color: transparent;
@@ -648,89 +687,26 @@ ul.list {
       -o-transition: none;
       transition: none; } }
 
-.nav__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
-  @media (max-width: 900px) {
-    .nav__list {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      width: 100%; } }
-
-.nav__item {
-  position: relative; }
-  .nav__item a {
-    display: block;
-    padding: 20px 25px;
-    line-height: 1;
-    text-decoration: none; }
-  .nav__item.teaching, .nav__item.grey {
-    background-color: #bf0000; }
-    .nav__item.teaching:after, .nav__item.grey:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 56px;
-      height: 100%;
-      background-color: #800000;
-      z-index: 0;
-      -webkit-transition: width 0.5s;
-      -o-transition: width 0.5s;
-      transition: width 0.5s; }
-    .nav__item.teaching a, .nav__item.grey a {
-      position: relative;
-      padding: 20px 25px 20px 65px;
-      z-index: 1; }
-      .nav__item.teaching a:before, .nav__item.grey a:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 56px;
-        height: 56px;
-        background: url(../img/icons/book.png) center center/30px 26px no-repeat;
-        z-index: 1; }
-    .nav__item.teaching:hover:after, .nav__item.grey:hover:after {
-      width: 100%; }
-  @media (max-width: 900px) {
-    .nav__item {
-      width: 100%; }
-      .nav__item a {
-        text-align: center; }
-      .nav__item.teaching, .nav__item.grey {
-        display: none; } }
-  .nav__item.grey {
-    background-color: #14171c; }
-    .nav__item.grey:after {
-      background-color: #101216; }
-
 .blog-btn {
-  display: none;
-  width: 58px;
-  height: 58px;
-  margin-right: 20px;
-  background: #bf0000 url(../img/icons/book.png) center center/24px 24px no-repeat; }
+  position: relative;
+  line-height: 1;
+  display: none; }
+  .blog-btn a {
+    text-decoration: none; }
   @media (max-width: 900px) {
     .blog-btn {
       display: inline-block; } }
   .blog-btn.grey {
     background-color: #14171c; }
+    .blog-btn.grey:after {
+      background-color: #101216; }
 
 /*sicial*/
 .my-link {
   font-size: 0; }
+  @media (max-width: 600px) {
+    .my-link {
+      margin-left: auto; } }
 
 .my-link__item {
   display: inline-block;
@@ -1465,7 +1441,8 @@ p.about__title {
       margin: 0 0 5% 0;
       -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
-      flex: 1 1 100%; } }
+      flex: 1 1 100%;
+      max-width: 100%; } }
 
 .webinar__category-pic {
   position: relative;
@@ -2263,14 +2240,14 @@ button.swiper-pagination-bullet {
 .menu-togle {
   display: none;
   position: relative;
-  padding: 10px;
+  padding: 10px 24px 10px 0px;
   z-index: 101; }
   .menu-togle span {
     position: relative;
     display: block;
-    width: 16px;
-    height: 16px;
-    padding: 6px 0;
+    width: 26px;
+    height: 26px;
+    padding: 11px 0;
     background-color: #fff;
     background-clip: content-box; }
     .menu-togle span:before, .menu-togle span:after {
@@ -2292,18 +2269,21 @@ button.swiper-pagination-bullet {
     .menu-togle span.open {
       background-color: transparent; }
       .menu-togle span.open:before {
-        top: 6px;
+        top: 14px;
         -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
         transform: rotate(-45deg); }
       .menu-togle span.open:after {
-        bottom: 6px;
+        bottom: 8px;
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         transform: rotate(45deg); }
   @media (max-width: 900px) {
     .menu-togle {
-      display: block; } }
+      display: block;
+      -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+      order: -1; } }
 
 .btn {
   position: relative;

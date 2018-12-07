@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,7 +23,7 @@ class UserController extends AbstractController
     public function new(Request $request): Response
     {
         $user = new User();
-        $user->setActive(false)
+        $user
             ->setAge((int)$request->get('age'))
             ->setCity($request->get('city'))
             ->setEmail($request->get('email'))
@@ -32,8 +33,8 @@ class UserController extends AbstractController
             ->setPhone($request->get('phone'))
             ->setRefToken('/ref/' . $this->generateToken())
             ->setTmp($request->get('tmp'))
-            ->setRole(User::ROLE);
-
+            ->setRole(User::ROLE)
+            ->setActive(true);
 
             if ($request->get('city')==="other"){
                 $user->setCity($request->get('otherCity'));
@@ -42,7 +43,7 @@ class UserController extends AbstractController
                 $em->persist($user);
                 $em->flush();
 
-        return new Response('ok',
+        return new JsonResponse(['status'=>200],
             Response::HTTP_OK,
             array('Content-type' => 'application/json')
         );

@@ -109,7 +109,7 @@ class Category
     /**
      * @return File
      */
-    public function getImageBannerFile(): File
+    public function getImageBannerFile(): ?File
     {
         return $this->imageBannerFile;
     }
