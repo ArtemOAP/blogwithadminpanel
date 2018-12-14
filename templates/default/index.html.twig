@@ -736,7 +736,11 @@
               .append("<input name='email' value='{{ email }}' type='hidden'>")
               .append("<input name='gender' value='{{ gender }}' type='hidden'>")
               .append("<input name='full' value='{{ full }}' type='hidden'>")
-              .append("<input name='tmp' value='{{ tmp }}' type='hidden'>");
+              .append("<input name='tmp' value='{{ tmp }}' type='hidden'>")
+              .append("<input name='click_id' value='{{ click_id }}' type='hidden'>")
+              .append("<input name='t1' value='{{ t1 }}' type='hidden'>")
+              .append("<input name='t2' value='{{ t2 }}' type='hidden'>")
+              .append("<input name='t3' value='{{ t3 }}' type='hidden'>");
 
 
           $('form').on('submit', function(e) {
@@ -751,6 +755,11 @@
                   success: function(data) {
                       if (!!data && data.status === 200) {
                           $('.overlay-thanks').addClass('active');
+                          var img = document.createElement('img');
+                          img.width = 1;
+                          img.height = 1;
+                          img.src = "http://wttrack.com/pback.php?cnv_id={{ click_id }}";
+                          document.querySelector('body').appendChild(img);
                       }
                       if (!!data && data.status === 500) {
 

@@ -101,6 +101,27 @@ class User implements UserInterface
      */
     private $visit;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $clickId;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $t1;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $t2;
+
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $t3;
+
     public function __construct()
     {
         $this->created = new \DateTime("now");
@@ -328,5 +349,75 @@ class User implements UserInterface
         $this->refToken = $refToken;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getClickId()
+    {
+        return $this->clickId;
+    }
+
+    /**
+     * @param mixed $clickId
+     */
+    public function setClickId($clickId): User
+    {
+        $this->clickId = $clickId;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getT1()
+    {
+        return $this->t1;
+    }
+
+    /**
+     * @param mixed $t1
+     */
+    public function setT1($t1): User
+    {
+        $this->t1 = $t1;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getT2()
+    {
+        return $this->t2;
+
+    }
+
+    /**
+     * @param mixed $t2
+     */
+    public function setT2($t2): User
+    {
+        $this->t2 = $t2;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getT3()
+    {
+        return $this->t3;
+    }
+
+    /**
+     * @param mixed $t3
+     */
+    public function setT3($t3): User
+    {
+        $this->t3 = $t3;
+        return $this;
+    }
+
 
 }

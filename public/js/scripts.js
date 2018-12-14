@@ -68,57 +68,57 @@ $(document).ready(function () {
     }
   })
 
-  //  spincr
+  //  spin  TODO clear
   // resource: https://codepen.io/shivasurya/pen/FatiB
   $(function () {
 
-    function startCount(countEl) {
-      if (countEl.length) {
-        countEl.each(function () {
-          var $this = $(this);
-          $this.prop('counter', 0).animate(
-            {
-              counter: $this.text()
-            },
-            {
-              duration: 2000,
-              easing: 'linear',
-              step: function (el) {
-                $this.text(Math.ceil(el));
-              }
-            }
-          );
-        });
-      }
-    }
+    // function startCount(countEl) {
+    //   if (countEl.length) {
+    //     countEl.each(function () {
+    //       var $this = $(this);
+    //       $this.prop('counter', 0).animate(
+    //         {
+    //           counter: $this.text()
+    //         },
+    //         {
+    //           duration: 2000,
+    //           easing: 'linear',
+    //           step: function (el) {
+    //             $this.text(Math.ceil(el));
+    //           }
+    //         }
+    //       );
+    //     });
+    //   }
+    // }
 
-    var $animationEl = $('.spinner__list');
-    var $window = $(window);
-    var windowHeight = $window.height();
+    // var $animationEl = $('.spinner__list');
+    // var $window = $(window);
+    // var windowHeight = $window.height();
 
 
 
-    if (window.matchMedia("(min-width: 600px)").matches) {
-      $animationEl.each(function () {
-        var initCount = true;
-        var $element = $(this);
-        var $countEl = $(this).find('.spinner__digit');
-
-        $window.on('scroll resize', function () {
-          var windowTopPosition = $window.scrollTop();
-          var windowBottomPosition = (windowTopPosition + windowHeight);
-          var elementTopPosition = $element.offset().top;
-          //check to see if this current container is within viewport
-
-          if (elementTopPosition <= windowBottomPosition) {
-            if (initCount) {
-              startCount($countEl);
-              initCount = false;
-            }
-          }
-        });
-      });
-    }
+    // if (window.matchMedia("(min-width: 600px)").matches) {
+    //   $animationEl.each(function () {
+    //     var initCount = true;
+    //     var $element = $(this);
+    //     var $countEl = $(this).find('.spinner__digit');
+    //
+    //     $window.on('scroll resize', function () {
+    //       var windowTopPosition = $window.scrollTop();
+    //       var windowBottomPosition = (windowTopPosition + windowHeight);
+    //       var elementTopPosition = $element.offset().top;
+    //       //check to see if this current container is within viewport
+    //
+    //       if (elementTopPosition <= windowBottomPosition) {
+    //         if (initCount) {
+    //           startCount($countEl);
+    //           initCount = false;
+    //         }
+    //       }
+    //     });
+    //   });
+    // }
 
   });
 

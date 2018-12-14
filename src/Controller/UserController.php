@@ -33,6 +33,10 @@ class UserController extends AbstractController
             ->setPhone($request->get('phone'))
             ->setRefToken('/ref/' . $this->generateToken())
             ->setTmp($request->get('tmp'))
+            ->setClickId($request->get('click_id'))
+            ->setT1($request->get('t1'))
+            ->setT2($request->get('t2'))
+            ->setT3($request->get('t3'))
             ->setRole(User::ROLE)
             ->setActive(true);
 

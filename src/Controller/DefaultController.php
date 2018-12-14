@@ -32,6 +32,10 @@ class DefaultController extends AbstractController
             'phone'=>isset($params['phone']) && !empty($params['phone'])?$params['phone']:'',
             'full'=>isset($params['full']) && !empty($params['full'])?(int)$params['full']:0,
             'tmp'=>isset($params['tmp']) && !empty($params['tmp'])?(int)$params['tmp']:0,
+            'click_id'=>isset($params['click_id']) && !empty($params['click_id'])?$params['click_id']:"",
+            't1'=>isset($params['t1']) && !empty($params['t1'])?$params['t1']:"",
+            't2'=>isset($params['t2']) && !empty($params['t2'])?$params['t2']:"",
+            't3'=>isset($params['t3']) && !empty($params['t3'])?$params['t3']:"",
         ]);
     }
 
